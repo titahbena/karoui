@@ -1,1 +1,2 @@
-test
+const menu=document.querySelector('.menu-btn');const links=document.querySelector('.navlinks');if(menu&&links){menu.addEventListener('click',()=>links.classList.toggle('open'));}
+const form=document.querySelector('#contact-form');if(form){form.addEventListener('submit',e=>{e.preventDefault();const d=new FormData(form);const subject=encodeURIComponent('Demande depuis le site KAROUI — '+(d.get('objet')||'Contact'));const body=encodeURIComponent(`Nom : ${d.get('nom')}\nEmail : ${d.get('email')}\nTéléphone : ${d.get('telephone')}\n\n${d.get('message')}`);window.location.href=`mailto:contact@karoui.fr?subject=${subject}&body=${body}`;});}
